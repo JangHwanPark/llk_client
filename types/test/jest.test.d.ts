@@ -1,5 +1,6 @@
-function jestTest() {
-  return 'jestTest';
+function jestTest(str) {
+  return str;
 }
 
-jestTest();
+const str = "jestTest";
+jestTest(str);
