@@ -3,21 +3,20 @@ name: LLK_Client CI
 on:
   # push 시 검증할 브랜치
   push:
-    branches: [ "master", "dev", "stage" ]
+    branches: ['master', 'dev', 'stage']
   # pull request 시 검증할 브랜치
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
   build:
-
     # CI 실행할 환경 (우분투)
     runs-on: ubuntu-latest
 
     # CI 가 실행될 노드 버전
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
 
     # 실행할 작업
     steps:
