@@ -1,0 +1,49 @@
+name: LLK_Client CI
+
+on:
+  # push 시 검증할 브랜치
+  push:
+    branches: [ "master", "dev", "stage" ]
+  # pull request 시 검증할 브랜치
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    # CI 실행할 환경 (우분투)
+    runs-on: ubuntu-latest
+
+    # CI 가 실행될 노드 버전
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    # 실행할 작업
+    steps:
+    # GitHub Actions에서 저장소를 체크아웃하여 작업 디렉토리로 가져옴
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 위에서 설정한 노드 버전을 설정하고 npm 캐시를 사용하도록 구성함
+    - name: Set up Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'yarn'
+
+    # pakage.json 기반으로 프로젝트 의존성을 설치함
+    - name: Install dependencies
+      run: yatn install
+
+    # 형식 검사 (프로젝트 타입 검증)
+    - name: Run type check
+      run: yarn type-check
+
+     # 빌드 스크립트가 존재하는 경우 프로젝트를 빌드
+    - name: Build the project
+      run: yarn build --if-present
+
+    # 프로젝트의 테스트를 실행
+    - name: Run tests
+      run: yarn test
