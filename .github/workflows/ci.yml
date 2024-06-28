@@ -54,17 +54,3 @@ jobs:
       # 프로젝트의 테스트를 실행
       - name: Run tests
         run: yarn test
-
-      # CI 번호를 커밋 메시지에 추가하여 저장소에 푸시함
-      - name: Commit and push CI build number
-        if: ${{ success() }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          echo "CI Build Number: $GITHUB_RUN_NUMBER" >> ci-build-number.txt
-          git add ci-build-number.txt
-          git commit -m "Add CI build number: $GITHUB_RUN_NUMBER"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          git push origin HEAD:$(echo $GITHUB_REF | cut -d'/' -f3-)
