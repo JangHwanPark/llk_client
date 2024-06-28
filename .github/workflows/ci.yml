@@ -36,6 +36,10 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
+      # 코드 포맷 검사를 실행하여 코드 스타일을 검증함
+      - name: Run code format check
+        run: yarn prettier --check .
+
       # 형식 검사 (프로젝트 타입 검증)
       - name: Run type check
         run: yarn type-check
