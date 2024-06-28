@@ -12,7 +12,7 @@ interface InputFieldProps {
   ariaDescribedby?: string;
 }
 
-export const InputField = ({
+export const InputField: React.FC<InputFieldProps> = ({
   id,
   text,
   style,
