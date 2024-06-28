@@ -3,7 +3,7 @@ name: LLK_Client CI
 on:
   # push 시 검증할 브랜치
   push:
-    branches: ['master', 'dev', 'stage']
+    branches: ['master', 'dev', 'stage', "ci-test"]
   # pull request 시 검증할 브랜치
   pull_request:
     branches: ['master']
