@@ -2,5 +2,5 @@ function jestTest(str) {
   return str;
 }
 
-const str = "jestTest";
+const str = 'jestTest';
 jestTest(str);
