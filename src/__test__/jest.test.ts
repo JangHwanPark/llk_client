@@ -7,4 +7,9 @@ describe('js test', () => {
     const name = 'yuds';
     expect(name).toBe('yuds');
   });
+
+  it('이건 테스트 타이틀 메시지3', () => {
+    const name = 'yuds';
+    expect(name).toBe('yuds');
+  });
 });
