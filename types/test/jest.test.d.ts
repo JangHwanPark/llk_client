@@ -1,5 +1,5 @@
 function jestTest() {
-    return 'jestTest';
+  return 'jestTest';
 }
 
-jestTest()
+jestTest();
