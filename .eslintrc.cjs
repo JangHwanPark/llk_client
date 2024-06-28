@@ -5,7 +5,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended' // Prettier 플러그인 추가
+    'plugin:prettier/recommended', // Prettier 플러그인 추가
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -27,16 +27,16 @@ module.exports = {
         bracketSpacing: true,
         jsxBracketSameLine: false,
         arrowParens: 'always',
-        endOfLine: 'lf'
-      }
+        endOfLine: 'lf',
+      },
     ],
     'no-multiple-empty-lines': [
       'error',
       {
-        max: 2,       // 최대 빈 줄 수를 2로 설정
-        maxEOF: 1,    // 파일 끝에서 최대 빈 줄 수를 1로 설정
-        maxBOF: 0     // 파일 시작에서 최대 빈 줄 수를 0으로 설정
-      }
-    ]
+        max: 2, // 최대 빈 줄 수를 2로 설정
+        maxEOF: 1, // 파일 끝에서 최대 빈 줄 수를 1로 설정
+        maxBOF: 0, // 파일 시작에서 최대 빈 줄 수를 0으로 설정
+      },
+    ],
   },
 };
