@@ -3,4 +3,7 @@
 @use 'variables';
 
 // pages
-@use '../../pages/Home';
+@use '../../pages/Home/Home';
+
+// components
+@use '../../components/Button/Button';
