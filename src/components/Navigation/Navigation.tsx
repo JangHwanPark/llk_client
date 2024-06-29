@@ -6,11 +6,21 @@ export default function Navigation() {
     <nav>
       <h2>Logo</h2>
       <ul>
-        <li><Link to="/">Menu</Link></li>
-        <li><Link to="/">Menu</Link></li>
-        <li><Link to="/">Menu</Link></li>
-        <li><Link to="/">Menu</Link></li>
-        <li><Link to="/">Menu</Link></li>
+        <li>
+          <Link to="/">Menu</Link>
+        </li>
+        <li>
+          <Link to="/">Menu</Link>
+        </li>
+        <li>
+          <Link to="/">Menu</Link>
+        </li>
+        <li>
+          <Link to="/">Menu</Link>
+        </li>
+        <li>
+          <Link to="/">Menu</Link>
+        </li>
       </ul>
     </nav>
   );

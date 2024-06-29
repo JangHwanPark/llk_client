@@ -33,7 +33,7 @@ export const validationTrim = (value: string): boolean => {
 
   const trimmed = value.trim();
   return trimmed.length === 0;
-}
+};
 
 /**
  * 전화번호 형식이 유효한지 검증

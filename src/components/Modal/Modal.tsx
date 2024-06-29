@@ -11,13 +11,11 @@ interface ModalProps {
  * @param {function} onClose - 모달을 닫는 함수
  * @param {React.ReactNode} children - 모달 팝업에 들어갈 내용
  */
-export const Modal: React.FC<React.PropsWithChildren<ModalProps>> = (
-  {
-    isOpen,
-    onClose,
-    children,
-  },
-) => {
+export const Modal: React.FC<React.PropsWithChildren<ModalProps>> = ({
+  isOpen,
+  onClose,
+  children,
+}) => {
   // 모달 요소에 대한 참조 생성
   const modalRef = useRef<HTMLDivElement>(null);
   console.log(modalRef);
@@ -42,9 +40,7 @@ export const Modal: React.FC<React.PropsWithChildren<ModalProps>> = (
         {children}
       </div>
       <div>
-        <button onClick={onClose}>
-          닫기
-        </button>
+        <button onClick={onClose}>닫기</button>
       </div>
     </div>
   );
