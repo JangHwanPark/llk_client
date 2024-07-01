@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function LoadingSpinner() {
   return (
-    <div></div>
+    <div className="loading-spinner"></div>
   );
 }
