@@ -35,15 +35,20 @@ a {
   color: #007bff;
   text-decoration: none;
 }
-a:hover,
-a:focus {
+a:hover, a:focus {
   text-decoration: underline;
+}
+
+button {
+  border: none;
+  background: none;
 }
 
 ul,
 ol {
-  margin: 1rem 0;
-  padding: 0 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 li {
@@ -83,6 +88,59 @@ select {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.navigation {
+  height: 100px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.navigation .logo {
+  margin: auto 0;
+}
+.navigation .nav-menu {
+  display: flex;
+  align-items: center;
+}
+.navigation .nav-menu .nav-item {
+  margin: 0 1rem;
+}
+.navigation .auth-container {
+  display: flex;
+  align-items: center;
+}
+.navigation .auth-container a {
+  margin: 0 1rem;
+}
+.navigation .mobile-menu {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    height: 80px;
+    flex-direction: column;
+  }
+  .navigation .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navigation .nav-menu,
+  .navigation .auth-container {
+    display: none;
+  }
+  .navigation .active-menu {
+    display: block;
+    text-align: center;
+  }
+  .navigation .mobile-menu {
+    display: block;
+  }
+  .navigation .mobile-menu button {
+    vertical-align: middle;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

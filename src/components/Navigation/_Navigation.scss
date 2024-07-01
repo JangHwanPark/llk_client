@@ -1,0 +1,64 @@
+.navigation {
+  height: 100px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    margin: auto 0;
+  }
+
+  .nav-menu {
+    display: flex;
+    align-items: center;
+
+    .nav-item {
+      margin: 0 1rem;
+    }
+  }
+
+  .auth-container {
+    display: flex;
+    align-items: center;
+
+    a {
+      margin: 0 1rem;
+    }
+  }
+
+  // 모바일 대응
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    height: 80px;
+    flex-direction: column;
+
+    .nav-header {
+      display: flex;
+      align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-menu,
+    .auth-container {
+      display: none;
+    }
+
+    .active-menu {
+      display: block;
+      text-align: center;
+    }
+
+    .mobile-menu {
+      display: block;
+
+      button {
+        vertical-align: middle;
+      }
+    }
+  }
+}

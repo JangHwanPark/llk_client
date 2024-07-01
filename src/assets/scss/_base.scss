@@ -44,11 +44,18 @@ a {
   }
 }
 
+// button
+button {
+  border: none;
+  background: none;
+}
+
 // Lists
 ul,
 ol {
-  margin: 1rem 0;
-  padding: 0 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 li {

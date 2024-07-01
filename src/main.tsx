@@ -6,6 +6,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 // import pages
 import App from './pages/Home/App';
 import Home from './pages/Home/Home';
+import SignIn from './pages/SignIn/SignIn';
+import SignUp from './pages/SignUp/SignUp';
 
 // import css
 import './assets/scss/index.scss';
@@ -15,7 +17,11 @@ const routes = [
   {
     path: '/',
     element: <App />,
-    children: [{ index: true, element: <Home /> }],
+    children: [
+      {index: true, element: <Home/>},
+      {path: 'signin', element: <SignIn/>},
+      {path: 'signup', element: <SignUp/>}
+    ],
   },
 ];
 
