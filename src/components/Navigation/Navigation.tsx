@@ -23,7 +23,7 @@ export default function Navigation() {
         </div>
       </div>
 
-      <ul className={`nav-menu ${!showMenu ? "active-menu" : ""}`}>
+      <ul className={`nav-menu ${showMenu ? "active-menu" : ""}`}>
         <li className="nav-item">
           <Link to="/">Buy</Link>
         </li>
@@ -42,9 +42,9 @@ export default function Navigation() {
       </ul>
 
       {/* Auth Container */}
-      <ul className={`auth-container ${!showMenu ? "active-menu" : ""}`}>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/register">Register</Link></li>
+      <ul className={`auth-container ${showMenu ? "active-menu" : ""}`}>
+        <li><Link to="/signin">Login</Link></li>
+        <li><Link to="/signup">Register</Link></li>
       </ul>
     </nav>
   );
