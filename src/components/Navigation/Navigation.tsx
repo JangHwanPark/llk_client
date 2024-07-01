@@ -42,10 +42,10 @@ export default function Navigation() {
       </ul>
 
       {/* Auth Container */}
-      <div className="auth-container">
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
-      </div>
+      <ul className={`auth-container ${!showMenu ? "active-menu" : ""}`}>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/register">Register</Link></li>
+      </ul>
     </nav>
   );
 }
