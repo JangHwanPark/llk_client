@@ -1,0 +1,11 @@
+@use '../../assets/scss/variables';
+
+.button {
+  background: variables.$primary-color;
+  color: variables.$white-color;
+
+  &:hover {
+    background: variables.$secondary-color;
+    transition: .5s ease-in-out;
+  }
+}
