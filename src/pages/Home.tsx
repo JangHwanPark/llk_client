@@ -1,6 +1,6 @@
 import React from 'react';
-import Navigation from "../../components/Navigation/Navigation";
-import LoadingSpinner from '../../components/LoadingSpiner/LoadingSpinner';
+import Navigation from "../components/Navigation";
+import LoadingSpinner from '../components/LoadingSpinner';
 
 export default function Home() {
   return (

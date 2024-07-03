@@ -1,11 +1,12 @@
 @use '../../styles/variables';
 
 .button {
-  background: variables.$primary-color;
+  background: variables.$secondary-color;
   color: variables.$white-color;
+  cursor: pointer;
 
   &:hover {
-    background: variables.$secondary-color;
+    background: variables.$primary-color;
     transition: .5s ease-in-out;
   }
 }

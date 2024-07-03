@@ -10,7 +10,7 @@ import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 
 // import css
-import './assets/styles/index.scss';
+import './styles/index.scss';
 
 // 라우터 설정
 const routes = [
