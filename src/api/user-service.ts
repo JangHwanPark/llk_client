@@ -24,15 +24,17 @@ export const registerAPI = async (
  * 로그인 API
  */
 export const loginAPI = async(
-  user: {
+  credentials: {
     email: string;
     password: string;
   }) => {
   try {
     // 로그인 API 호출
-    const res = await axiosInstance.post(import.meta.env.VITE_API_REGISTER, user);
-    console.log('res', res)
-    return res;
+    const response  = await axiosInstance.post(import.meta.env.VITE_API_LOGIN, credentials);
+    const accessToken = response.headers['Access']
+    console.log('accessToken', accessToken)
+    console.log('res', response)
+    return response;
   } catch (error) {
     console.error("Login error", error);
     return undefined;   // 오류 발생 시 undefined 반환

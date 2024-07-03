@@ -3,11 +3,35 @@ import {InputField} from "../components/InputField";
 import {Link} from "react-router-dom";
 import {Button} from "../components/Button";
 import AuthHeader from "../components/AuthHeader";
+import {loginAPI} from "../api/user-service";
+
+interface SignInProps {
+  email: string;
+  password: string;
+}
 
 export default function SignIn() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [values, setValues] = React.useState<SignInProps>({
+    email: '',
+    password: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const {name, value} = e.target;
+    setValues({
+      ...values,
+      [name]: value
+    });
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('submit');
+    try {
+      await loginAPI(values);
+      console.log('Success')
+    } catch (error) {
+      throw new Error('Login error');
+    }
   }
 
   return (
@@ -20,8 +44,20 @@ export default function SignIn() {
       />
       <form onSubmit={handleSubmit}>
         <div>
-          <InputField type="text" placeholder="email"/>
-          <InputField type="text" placeholder="password"/>
+          <InputField
+            type="text"
+            placeholder="email"
+            name="email"
+            value={values.email}
+            onChange={handleChange}
+          />
+          <InputField
+            type="text"
+            placeholder="password"
+            name="password"
+            value={values.password}
+            onChange={handleChange}
+          />
           <input type="checkbox"/>
           <label htmlFor="">Remember me</label>
         </div>
