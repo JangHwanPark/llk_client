@@ -53,3 +53,16 @@ export const logoutAPI = async () => {
     return undefined;   // 오류 발생 시 undefined 반환
   }
 };
+
+/**
+ * 사용자 정보 조회 API
+ */
+export const fetchUserInfoAPI = async () => {
+  try {
+    // 사용자 정보 조회 API 호출
+    return await axiosInstance.get("/user");
+  } catch (error) {
+    console.error("Fetch user info error", error);
+    return undefined;   // 오류 발생 시 undefined 반환
+  }
+};
