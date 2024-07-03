@@ -2,18 +2,23 @@ import React from 'react';
 import {InputField} from "../components/InputField";
 import {Link} from "react-router-dom";
 import {Button} from "../components/Button";
+import AuthHeader from "../components/AuthHeader";
 
 export default function SignIn() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log('submit');
+  }
+
   return (
     <div>
-      <header>
-        <h1>Find Your Perfect Place</h1>
-        <p>
-          Already have an account?
-          <Link to='/signup'>Login</Link>
-        </p>
-      </header>
-      <form>
+      <AuthHeader
+        title="Find Your Perfect Place"
+        subtitle="Begin exploring properties with just one click"
+        path="/signup"
+        pathTitle="Register"
+      />
+      <form onSubmit={handleSubmit}>
         <div>
           <InputField type="text" placeholder="email"/>
           <InputField type="text" placeholder="password"/>

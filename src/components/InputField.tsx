@@ -3,6 +3,7 @@ import React from 'react';
 interface InputFieldProps {
   id?: string;
   text?: string;
+  name?: string;
   style?: React.CSSProperties;
   placeholder: string;
   type: 'text' | 'password' | 'email' | 'number';
@@ -15,6 +16,7 @@ interface InputFieldProps {
 export const InputField: React.FC<InputFieldProps> = ({
   id,
   text,
+  name,
   style,
   placeholder,
   type,
@@ -31,6 +33,7 @@ export const InputField: React.FC<InputFieldProps> = ({
           id={id}
           className="input-field"
           type={type}
+          name={name}
           placeholder={placeholder}
           style={style}
           onChange={onChange}
