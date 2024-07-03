@@ -47,7 +47,7 @@ export const loginAPI = async(
 export const logoutAPI = async () => {
   try {
     // 로그아웃 API 호출
-    return await axiosInstance.post("/logout");
+    return await axiosInstance.post(import.meta.env.VITE_API_OUT);
   } catch (error) {
     console.error("Logout error", error);
     return undefined;   // 오류 발생 시 undefined 반환
@@ -57,10 +57,19 @@ export const logoutAPI = async () => {
 /**
  * 사용자 정보 조회 API
  */
-export const fetchUserInfoAPI = async () => {
+export const getUserInfoAPI = async () => {
   try {
+    const accessToken = localStorage.getItem("accessToken");
+    if (!accessToken) {
+      throw new Error("No access token found");
+    }
+
     // 사용자 정보 조회 API 호출
-    return await axiosInstance.get("/user");
+    return await axiosInstance.get(import.meta.env.VITE_API_USERS, {
+      headers: {
+        'access': `${accessToken}`
+      }
+    });
   } catch (error) {
     console.error("Fetch user info error", error);
     return undefined;   // 오류 발생 시 undefined 반환
