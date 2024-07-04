@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import {Button} from "../components/Button";
 import AuthHeader from "../components/AuthHeader";
 import {loginAPI} from "../api/user-service";
+import SignInGoogle from '../components/SignInGoogle';
+import DivisionLine from '../components/DivisionLine';
 
 interface SignInProps {
   email: string;
@@ -44,34 +46,28 @@ export default function SignIn() {
         />
         <main className="content-main">
           <form onSubmit={handleSubmit} className='form-auth'>
-            <div className='input-wrapper'>
-              <InputField
-                type="text"
-                placeholder="email"
-                name="email"
-                value={values.email}
-                onChange={handleChange}
-              />
-              <InputField
-                type="text"
-                placeholder="password"
-                name="password"
-                value={values.password}
-                onChange={handleChange}
-              />
-            </div>
+            <InputField
+              type="text"
+              placeholder="email"
+              name="email"
+              value={values.email}
+              onChange={handleChange}
+            />
+            <InputField
+              type="text"
+              placeholder="password"
+              name="password"
+              value={values.password}
+              onChange={handleChange}
+            />
             <div className='remember-login'>
-              <input type="checkbox" />
-              <label htmlFor="">Remember me</label>
+              <input id="remember-me" type="checkbox"/>
+              <label htmlFor="remember-me">Remember me</label>
             </div>
             <div className="confirm-btn">
               <Button type="submit" text="Login" />
-              <div className="division">
-                <span>OR</span>
-              </div>
-              <div className='button-social'>
-                <button>Google Login</button>
-              </div>
+              <DivisionLine/>
+              <SignInGoogle/>
             </div>
           </form>
           <div className='auth-link'>
