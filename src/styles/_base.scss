@@ -99,3 +99,12 @@ select {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+// input
+input {
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}

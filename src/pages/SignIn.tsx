@@ -44,7 +44,7 @@ export default function SignIn() {
         />
         <main className="content-main">
           <form onSubmit={handleSubmit} className='form-auth'>
-            <div className='input-container'>
+            <div className='input-wrapper'>
               <InputField
                 type="text"
                 placeholder="email"
@@ -59,13 +59,19 @@ export default function SignIn() {
                 value={values.password}
                 onChange={handleChange}
               />
+            </div>
+            <div className='remember-login'>
               <input type="checkbox" />
               <label htmlFor="">Remember me</label>
             </div>
-            <Button type="submit" text="Login" />
-            <div className="division"></div>
-            <div className='button-social'>
-              <button>Google Login</button>
+            <div className="confirm-btn">
+              <Button type="submit" text="Login" />
+              <div className="division">
+                <span>OR</span>
+              </div>
+              <div className='button-social'>
+                <button>Google Login</button>
+              </div>
             </div>
           </form>
           <div className='auth-link'>

@@ -17,14 +17,21 @@
   vertical-align: middle;
 
   .content-main {
-    margin: 0 30rem;
+    width: 400px;
+    margin: 0 auto;
 
     // 로그인 폼
     .form-auth {
 
-      // 입력 컨테이너
-      .input-container {
 
+      // 입력 컨테이너
+      .input-wrapper {
+
+      }
+
+      // Remember me
+      .remember-login {
+        margin: 10px 0;
       }
 
       // 소셜 로그인 버튼
@@ -40,6 +47,23 @@
   }
 }
 
-.division {
+// confirm button
+.confirm-btn {
+  padding-top: 40px;
+  text-align: center;
 
+  .division {
+    padding: 15px 0;
+
+    span:before,
+    span:after {
+      width: calc(50% - 30px);
+      height: 1px;
+      margin: 8px;
+      display: inline-block;
+      background: rgba(0, 0, 0, .06);
+      vertical-align: middle;
+      content: '';
+    }
+  }
 }

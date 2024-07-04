@@ -26,12 +26,11 @@ export const InputField: React.FC<InputFieldProps> = ({
   ariaDescribedby,
 }) => {
   return (
-    <div>
-      <label htmlFor={id}>
+    <div className='input-field'>
+      <label htmlFor={id} className='screen-out'>
         <span>{text}</span>
         <input
           id={id}
-          className="input-field"
           type={type}
           name={name}
           placeholder={placeholder}
