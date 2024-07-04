@@ -1,6 +1,7 @@
 // default
 @use 'base';
 @use 'variables';
+@use 'mixins';
 
 // pages
 @use './pages/Home';
@@ -8,6 +9,7 @@
 @use './pages/SignUp';
 
 // components
+@use './components/AuthHeader';
 @use './components/Button';
 @use './components/Navigation';
 @use './components/LoadingSpinner';

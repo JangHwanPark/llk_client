@@ -17,9 +17,9 @@ const AuthHeader: React.FC<AuthHeaderProps> = (
   }
 ) => {
   return (
-    <header>
-      <h1>{title}</h1>
-      <p>
+    <header className='header-auth'>
+      <h1 className='header-title'>{title}</h1>
+      <p className='header-contents'>
         {subtitle}
         <Link to={path}>{pathTitle}</Link>
       </p>

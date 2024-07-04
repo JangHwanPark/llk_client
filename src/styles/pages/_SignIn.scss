@@ -1,0 +1,45 @@
+// 폼 컨테이너
+.form-container {
+  width: 100%;
+  height: 100%;
+}
+
+.form-container:before {
+  height: 100%;
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.form-inner {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+
+  .content-main {
+    margin: 0 30rem;
+
+    // 로그인 폼
+    .form-auth {
+
+      // 입력 컨테이너
+      .input-container {
+
+      }
+
+      // 소셜 로그인 버튼
+      .button-social {
+
+      }
+    }
+
+    // 링크 디자인
+    .auth-link {
+
+    }
+  }
+}
+
+.division {
+
+}

@@ -28,48 +28,51 @@ export default function SignIn() {
     e.preventDefault();
     try {
       await loginAPI(values);
-      console.log('Success')
     } catch (error) {
       throw new Error('Login error');
     }
   }
 
   return (
-    <div>
-      <AuthHeader
-        title="Find Your Perfect Place"
-        subtitle="Begin exploring properties with just one click"
-        path="/signup"
-        pathTitle="Register"
-      />
-      <form onSubmit={handleSubmit}>
-        <div>
-          <InputField
-            type="text"
-            placeholder="email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
-          />
-          <InputField
-            type="text"
-            placeholder="password"
-            name="password"
-            value={values.password}
-            onChange={handleChange}
-          />
-          <input type="checkbox"/>
-          <label htmlFor="">Remember me</label>
-        </div>
-        <Button type="submit" text="로그인"/>
-        <div className="division"></div>
-        <div>
-          <button>구글 로그인</button>
-        </div>
-      </form>
-      <div>
-        <p>계정이 없으신가요? <Link to="/signup">회원가입</Link></p>
-        <p>비밀번호를 잊으셨나요 ?</p>
+    <div className='form-container'>
+      <div className='form-inner'>
+        <AuthHeader
+          title="Find Your Perfect Place"
+          subtitle="Begin exploring properties with just one click"
+          path="/signup"
+          pathTitle="Register"
+        />
+        <main className="content-main">
+          <form onSubmit={handleSubmit} className='form-auth'>
+            <div className='input-container'>
+              <InputField
+                type="text"
+                placeholder="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+              />
+              <InputField
+                type="text"
+                placeholder="password"
+                name="password"
+                value={values.password}
+                onChange={handleChange}
+              />
+              <input type="checkbox" />
+              <label htmlFor="">Remember me</label>
+            </div>
+            <Button type="submit" text="Login" />
+            <div className="division"></div>
+            <div className='button-social'>
+              <button>Google Login</button>
+            </div>
+          </form>
+          <div className='auth-link'>
+            <p>Don’t have an account? <Link to="/signup">SignUp</Link></p>
+            <p>Forget Password ?</p>
+          </div>
+        </main>
       </div>
     </div>
   );
