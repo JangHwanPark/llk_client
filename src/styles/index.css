@@ -9,5 +9,6 @@
 @use './components/Navigation';
 @use './components/LoadingSpinner';
 @use './components/InputField';
+@use './components/SearchBar';
 
 /*# sourceMappingURL=index.css.map */
