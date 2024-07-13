@@ -1,20 +1,19 @@
 import React from 'react';
-import Navigation from "../components/Navigation";
 import SearchBar from '../components/SearchBar';
 import ReviewIcon from '../components/ReviewIcon';
+import Container from '../layout/Container';
 
 export default function Home() {
   return (
-    <div className="container">
-      <Navigation/>
+    <Container>
       <section className='hero'>
-        <SearchBar/>
+        <SearchBar />
       </section>
       <section className='review-section'>
-        <ReviewIcon/>
-        <ReviewIcon/>
-        <ReviewIcon/>
+        <ReviewIcon />
+        <ReviewIcon />
+        <ReviewIcon />
       </section>
-    </div>
+    </Container>
   );
 }

@@ -23,12 +23,12 @@ export default function Navigation() {
         </div>
       </div>
 
-      <ul className={`nav-menu ${showMenu ? "active-menu" : ""}`}>
+      <ul className={`nav-menu ${showMenu ? 'active-menu' : ''}`}>
         <li className="nav-item">
           <Link to="/">Buy</Link>
         </li>
         <li className="nav-item">
-        <Link to="/">Sell</Link>
+          <Link to="/">Sell</Link>
         </li>
         <li className="nav-item">
           <Link to="/">Rent</Link>
@@ -37,7 +37,7 @@ export default function Navigation() {
           <Link to="/">Land</Link>
         </li>
         <li className="nav-item">
-          <Link to="/">Contact Us</Link>
+          <Link to="/about">About</Link>
         </li>
       </ul>
 

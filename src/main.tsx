@@ -12,6 +12,7 @@ import SignUp from './pages/SignUp';
 // import css
 import './styles/index.scss';
 import { AuthProvider } from './context/AuthContext';
+import About from './pages/About';
 
 // 라우터 설정
 const routes = [
@@ -21,7 +22,8 @@ const routes = [
     children: [
       {index: true, element: <Home/>},
       {path: 'signin', element: <SignIn/>},
-      {path: 'signup', element: <SignUp/>}
+      {path: 'signup', element: <SignUp/>},
+      {path: 'about', element: <About/>},
     ],
   },
 ];
