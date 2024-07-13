@@ -1,6 +1,7 @@
 import React from 'react';
 import Navigation from "../components/Navigation";
 import SearchBar from '../components/SearchBar';
+import ReviewIcon from '../components/ReviewIcon';
 
 export default function Home() {
   return (
@@ -9,15 +10,8 @@ export default function Home() {
       <section className='hero'>
         <SearchBar/>
       </section>
-      <section className=''>
-        <div className='review'>
-          <div><img src="" alt="" /></div>
-          <div>
-            <p>name</p>
-            <p>star</p>
-            <p>description</p>
-          </div>
-        </div>
+      <section className='review-section'>
+        <ReviewIcon/>
       </section>
     </div>
   );
