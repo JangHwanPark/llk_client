@@ -10,5 +10,6 @@
 @use './components/LoadingSpinner';
 @use './components/InputField';
 @use './components/SearchBar';
+@use './components/Review';
 
 /*# sourceMappingURL=index.css.map */

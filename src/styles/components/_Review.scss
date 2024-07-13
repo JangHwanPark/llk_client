@@ -1,0 +1,27 @@
+// Review Page
+.review-section {
+  margin: 0 5rem;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+// Review Component
+.review {
+  width: 250px;
+  height: 200px;
+
+  .review-info {
+    text-align: center;
+  }
+
+  .user {
+    text-align: center;
+
+    .user-image {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+    }
+  }
+}

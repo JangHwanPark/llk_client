@@ -12,6 +12,8 @@ export default function Home() {
       </section>
       <section className='review-section'>
         <ReviewIcon/>
+        <ReviewIcon/>
+        <ReviewIcon/>
       </section>
     </div>
   );
