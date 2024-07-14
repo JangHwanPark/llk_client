@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from '../components/SearchBar';
 import ReviewIcon from '../components/ReviewIcon';
 import Container from '../layout/Container';
+import ContactUs from "../components/ContactUs";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
         <ReviewIcon />
         <ReviewIcon />
       </section>
+        <section className='contactus'>
+        <ContactUs />
+        </section>
     </Container>
   );
 }
