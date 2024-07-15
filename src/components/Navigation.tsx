@@ -13,7 +13,9 @@ export default function Navigation() {
   return (
     <nav className="navigation">
       <div className="nav-header">
-        <h2 className="logo">Logo</h2>
+        <Link to={'/'}>
+          <h2 className="logo">Logo</h2>
+        </Link>
 
         {/* 모바일 대응 */}
         <div className="mobile-menu">
