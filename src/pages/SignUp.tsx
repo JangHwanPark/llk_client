@@ -31,7 +31,6 @@ export default function SignUp() {
     e.preventDefault();
     try {
       await registerAPI(userInfo)
-      console.log('Success')
     } catch (error) {
       console.error('Register error', error)
     } finally {

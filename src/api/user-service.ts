@@ -5,7 +5,7 @@ import {axiosInstance} from "./axios-instance";
  */
 export const registerAPI = async (
   user: {
-    email: string
+    email: string;
     password: string;
     phone: string;
   }) => {
@@ -75,3 +75,19 @@ export const getUserInfoAPI = async () => {
     return undefined;   // 오류 발생 시 undefined 반환
   }
 };
+
+/**
+ *  contact us (문의하기)
+ **/
+export const postSubmitContactUs = async (
+  contact: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone: string;
+    description: string;
+  }
+) => {
+  const response = await axiosInstance.post(import.meta.env.VITE_API_CONTACT, contact);
+  console.log(response)
+}

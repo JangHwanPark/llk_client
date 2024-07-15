@@ -1,7 +1,8 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
-import ReviewIcon from '../components/ReviewIcon';
+import UserReview from '../components/UserReview';
 import Container from '../layout/Container';
+import ContactUsForm from "../components/ContactUsForm";
 
 export default function Home() {
   return (
@@ -10,9 +11,12 @@ export default function Home() {
         <SearchBar />
       </section>
       <section className='review-section'>
-        <ReviewIcon />
-        <ReviewIcon />
-        <ReviewIcon />
+        <UserReview />
+        <UserReview />
+        <UserReview />
+      </section>
+      <section>
+        <ContactUsForm/>
       </section>
     </Container>
   );

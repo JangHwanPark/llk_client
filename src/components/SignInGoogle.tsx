@@ -6,7 +6,9 @@ export default function SignInGoogle() {
     const redirectURL = import.meta.env.VITE_REDIRECT_URL;
     const scope = 'profile email';
     const responseType = 'code';
-    window.location.href = `${import.meta.env.VITE_LOCATION_GOOGLE}${clientId}&redirect_uri=${redirectURL}&response_type=${responseType}&scope=${scope}`;
+
+    window.location.href = `
+    ${import.meta.env.VITE_LOCATION_GOOGLE}`;
 
   }
 
