@@ -3,7 +3,17 @@
   margin: 0 5rem;
   padding: 3rem 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  h2 {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .review-wrapper {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 // Review Component

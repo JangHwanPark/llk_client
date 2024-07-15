@@ -11,9 +11,12 @@ export default function Home() {
         <SearchBar />
       </section>
       <section className='review-section'>
-        <UserReview />
-        <UserReview />
-        <UserReview />
+        <h2>what our clients says</h2>
+        <div className='review-wrapper'>
+          <UserReview/>
+          <UserReview/>
+          <UserReview/>
+        </div>
       </section>
       <section>
         <ContactUsForm/>
