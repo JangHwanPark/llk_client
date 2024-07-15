@@ -3,6 +3,7 @@ import SearchBar from '../components/SearchBar';
 import UserReview from '../components/UserReview';
 import Container from '../layout/Container';
 import ContactUsForm from "../components/ContactUsForm";
+import Carousel from "../components/Carousel";
 
 export default function Home() {
   return (
@@ -17,6 +18,9 @@ export default function Home() {
           <UserReview/>
           <UserReview/>
         </div>
+      </section>
+      <section className='carousel-section'>
+        <Carousel/>
       </section>
       <section>
         <ContactUsForm/>
