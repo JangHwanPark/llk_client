@@ -220,6 +220,11 @@ input:focus {
   height: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .img-wrapper {
+    display: none;
+  }
+}
 .header-auth .header-title,
 .header-auth .header-contents {
   text-align: center;

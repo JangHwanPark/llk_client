@@ -25,7 +25,6 @@ const ContactUsForm: React.FC = () => {
   ) => {
     e.preventDefault();
     await postSubmitContactUs(formData);
-    console.log('submit')
   }
 
   return (
@@ -60,13 +59,6 @@ const ContactUsForm: React.FC = () => {
           value={formData.phone}
           onChange={handleChange}
         />
-        {/*<InputField
-          placeholder='description'
-          type='text'
-          name='description'
-          value={formData.description}
-          onChange={handleChange}
-        />*/}
         <textarea
           id="contact-description"
           name="description"

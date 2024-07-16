@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {FormEvent, useState} from 'react';
 import {InputField} from "./InputField";
 import {Button} from "./Button";
 
@@ -12,8 +12,13 @@ const SearchBar = () => {
   const [clickButton, setClickButton] = useState('');
 
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    const { innerText } = e.target;
-    setClickButton(innerText);
+    const { textContent } = e.currentTarget;
+    setClickButton(textContent);
+    alert("준비중 입니다.")
+  }
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     alert("준비중 입니다." + clickButton)
   }
 
@@ -26,7 +31,7 @@ const SearchBar = () => {
           </button>
         ))}
       </div>
-      <form className='search-form'>
+      <form className='search-form' onSubmit={handleSubmit}>
         <InputField placeholder='검색' type='text'/>
         <Button text='Submit' type='submit'/>
       </form>
