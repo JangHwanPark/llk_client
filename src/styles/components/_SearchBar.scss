@@ -1,0 +1,8 @@
+.searchbar-container {
+  .button-wrapper {
+    button:hover {
+      transform: translateY(-20px);
+      transition: transform .2s ease-in-out;
+    }
+  }
+}

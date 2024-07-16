@@ -23,6 +23,9 @@ export default function Home() {
         <Carousel/>
       </section>
       <section>
+        회사 소개 및 바로가기
+      </section>
+      <section>
         <ContactUsForm/>
       </section>
     </Container>

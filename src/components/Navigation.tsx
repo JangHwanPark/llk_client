@@ -2,6 +2,14 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import {RxHamburgerMenu} from "react-icons/rx";
 
+const navbarItems = [
+  {label: "Buy", path: '/'},
+  {label: "Sell", path: '/'},
+  {label: "Rent", path: '/'},
+  {label: "Land", path: '/'},
+  //{label: "About", path: '/about'},
+]
+
 export default function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
 
@@ -14,7 +22,7 @@ export default function Navigation() {
     <nav className="navigation">
       <div className="nav-header">
         <Link to={'/'}>
-          <h2 className="logo">Logo</h2>
+          <h2 className="logo">HoJung Land</h2>
         </Link>
 
         {/* 모바일 대응 */}
@@ -26,26 +34,21 @@ export default function Navigation() {
       </div>
 
       <ul className={`nav-menu ${showMenu ? 'active-menu' : ''}`}>
+        {navbarItems.map((item, idx) => (
+          <li key={idx} className="nav-item" onClick={() => {
+            alert("준비중 입니다.")
+          }}>
+            <Link to={item.path}>{item.label}</Link>
+          </li>
+        ))}
         <li className="nav-item">
-          <Link to="/">Buy</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/">Sell</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/">Rent</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/">Land</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/about">About</Link>
+          <Link to='/about'>About</Link>
         </li>
       </ul>
 
       {/* Auth Container */}
       <ul className={`auth-container ${showMenu ? "active-menu" : ""}`}>
-        <li><Link to="/signin">Login</Link></li>
+      <li><Link to="/signin">Login</Link></li>
         <li><Link to="/signup">Register</Link></li>
       </ul>
     </nav>

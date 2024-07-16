@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
 const Carousel = () => {
   const [index, setIndex] = useState(0);
@@ -11,8 +11,6 @@ const Carousel = () => {
     originalImage[0]
   ];
 
-  const testRef = useRef(0);
-
   const handleTimeout = useCallback(() => {
     setAnimating(true);
     setIndex(prev => (prev + 1) % images.length);
@@ -21,7 +19,7 @@ const Carousel = () => {
   useEffect(() => {
     let timer: string | number | NodeJS.Timeout;
     if (!animating) {
-      timer = setTimeout(handleTimeout, 2000);
+      timer = setTimeout(handleTimeout, 5000);
     }
 
     return () => clearTimeout(timer);
@@ -36,7 +34,6 @@ const Carousel = () => {
     setAnimating(false); // 애니메이션 끝
   }, [index, images.length])
 
-  console.log(testRef.current)
   return (
     <div className='carousel-container' onTransitionEnd={handleTransitionEnd}>
       {images.map((img, idx) => (
