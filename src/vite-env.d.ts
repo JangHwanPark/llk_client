@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   readonly VITE_CLIENT_ID: string;
   readonly VITE_LOCATION_GOOGLE: string;
   readonly VITE_API_CONTACT: string;
+  readonly VITE_API_REISSUE: string;
 }
 
 interface ImportMeta {

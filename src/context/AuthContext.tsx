@@ -55,11 +55,8 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
     const response = await loginAPI(credential);
 
     if (response && response.status === 200) {
-      const accessToken = response.headers["Access"];
+      const accessToken = response.headers["access"];
       setAccessToken(accessToken);
-
-      // logging
-      console.log("Access Token: ", accessToken);
       await getUserInfoAPI();
     } else {
       console.error("Login failed with status " + response?.status);
