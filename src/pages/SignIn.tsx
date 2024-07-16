@@ -1,40 +1,41 @@
-import React from 'react';
+import {ChangeEvent, FormEvent, useState} from 'react';
 import {InputField} from "../components/InputField";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import {Button} from "../components/Button";
 import AuthHeader from "../components/AuthHeader";
-import {loginAPI} from "../api/user-service";
 import SignInGoogle from '../components/SignInGoogle';
 import DivisionLine from '../components/DivisionLine';
 import {useAuthorization} from "../hooks/useAuthorization";
+import {useMutation} from "@tanstack/react-query";
 
-interface SignInProps {
+export interface SignInProps {
   email: string;
   password: string;
 }
 
 export default function SignIn() {
-  const [values, setValues] = React.useState<SignInProps>({
+  const [values, setValues] = useState<SignInProps>({
     email: '',
     password: ''
   });
 
   // 토큰이 존재할경이 리다이렉트 처리
-  const {accessToken} = useAuthorization();
+  const {accessToken, login} = useAuthorization();
   if (accessToken) window.location.href = '/'
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const mutation = useMutation({
+    mutationFn: () => login(values)
+  });
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;
-    setValues({
-      ...values,
-      [name]: value
-    });
+    setValues({...values, [name]: value});
   }
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await loginAPI(values);
+      mutation.mutate();
     } catch (error) {
       throw new Error('Login error');
     }

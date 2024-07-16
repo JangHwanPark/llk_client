@@ -1,7 +1,9 @@
 // 컨텍스트 API 타입 정의
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import axios from 'axios';
-import { getUserInfoAPI, loginAPI, logoutAPI } from '../api/user-service';
+import { loginAPI, logoutAPI } from '../api/user-service';
+import {redirect} from "react-router-dom";
+import {SignInProps} from "../pages/SignIn";
 
 
 /*interface JwtPayload {
@@ -47,16 +49,12 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
   }, [accessToken]);
 
 
-  const login = async (credential: {
-    email: string,
-    password: string,
-  }) => {
+  const login = async (credential: SignInProps) => {
     const response = await loginAPI(credential);
-
     if (response && response.status === 200) {
       const accessToken = response.headers["access"];
       setAccessToken(accessToken);
-      await getUserInfoAPI();
+      redirect('/')
     } else {
       console.error("Login failed with status " + response?.status);
     }
