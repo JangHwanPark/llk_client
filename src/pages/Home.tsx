@@ -36,7 +36,6 @@ export default function Home() {
       <section className='company-section'>
         <h2>Company About</h2>
         <div className='company-container'>
-          {/*<div><img src="./img/hero01.jpg" alt=""/></div>*/}
           <div>회사 소개 섹션 입니다.</div>
         </div>
       </section>

@@ -46,9 +46,9 @@ export default function SignIn() {
       <div className='form-inner'>
         <AuthHeader
           title="Find Your Perfect Place"
-          subtitle="Begin exploring properties with just one click"
-          path="/signup"
-          pathTitle="Register"
+          subtitle="Go to main page"
+          path="/"
+          pathTitle="Click me!!"
         />
         <main className="content-main">
           <form onSubmit={handleSubmit} className='form-auth'>
@@ -67,13 +67,13 @@ export default function SignIn() {
               onChange={handleChange}
             />
             <div className='remember-login'>
-              <input id="remember-me" type="checkbox"/>
+              <input id="remember-me" type="checkbox" />
               <label htmlFor="remember-me">Remember me</label>
             </div>
             <div className="confirm-btn">
               <Button type="submit" text="Login" />
-              <DivisionLine/>
-              <SignInGoogle/>
+              <DivisionLine />
+              <SignInGoogle />
             </div>
           </form>
           <div className='auth-link'>
