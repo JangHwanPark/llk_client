@@ -4,8 +4,8 @@ import {Button} from "./Button";
 
 const buttonData = [
   {label: 'Buy'},
-  {label: 'Sell'},
   {label: 'Rent'},
+  // {label: 'Sell'},
 ]
 
 const SearchBar = () => {

@@ -20,6 +20,10 @@ body,
   background-color: #f9f9f9;
 }
 
+#root {
+  padding: 0 5rem;
+}
+
 // Typographic defaults
 h1,
 h2,
@@ -39,11 +43,6 @@ p {
 a {
   color: #333;
   text-decoration: none;
-
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
 }
 
 // button

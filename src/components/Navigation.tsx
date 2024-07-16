@@ -6,8 +6,7 @@ const navbarItems = [
   {label: "Buy", path: '/'},
   {label: "Sell", path: '/'},
   {label: "Rent", path: '/'},
-  {label: "Land", path: '/'},
-  //{label: "About", path: '/about'},
+  // {label: "Land", path: '/'},
 ]
 
 export default function Navigation() {
