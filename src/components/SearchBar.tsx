@@ -11,7 +11,7 @@ const buttonData = [
 const SearchBar = () => {
   const [clickButton, setClickButton] = useState('');
 
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     const { textContent } = e.currentTarget;
     setClickButton(textContent);
     alert("준비중 입니다.")

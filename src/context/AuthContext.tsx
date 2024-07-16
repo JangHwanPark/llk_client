@@ -36,7 +36,6 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
   // const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
   const [accessToken, setAccessToken] = useState<string | null>(localStorage.getItem("accessToken"));
 
-
   useEffect(() => {
     if (accessToken) {
       localStorage.setItem("accessToken", accessToken)
@@ -67,10 +66,10 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
   const logout = async () => {
     try {
       const response = await logoutAPI();
-
-      if (response && response.status == 200) {
-        setAccessToken(null)
+      console.log(response)
+      if (response.status == 200) {
         localStorage.removeItem("accessToken");
+        setAccessToken(null)
       } else {
         console.error("Logout failed with status: " + response?.status);
       }
@@ -97,6 +96,9 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
         const newAccessToken = response.data.accessToken;
         setAccessToken(newAccessToken);
         localStorage.setItem("accessToken", newAccessToken);
+      } else {
+        console.error("Failed to reissue token: status " + response.status);
+        await logout();
       }
     }
   };

@@ -1,11 +1,12 @@
 import React from 'react';
 import {InputField} from "../components/InputField";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Button} from "../components/Button";
 import AuthHeader from "../components/AuthHeader";
 import {loginAPI} from "../api/user-service";
 import SignInGoogle from '../components/SignInGoogle';
 import DivisionLine from '../components/DivisionLine';
+import {useAuthorization} from "../hooks/useAuthorization";
 
 interface SignInProps {
   email: string;
@@ -17,6 +18,10 @@ export default function SignIn() {
     email: '',
     password: ''
   });
+
+  // 토큰이 존재할경이 리다이렉트 처리
+  const {accessToken} = useAuthorization();
+  if (accessToken) window.location.href = '/'
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = e.target;

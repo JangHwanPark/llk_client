@@ -31,7 +31,6 @@ export const loginAPI = async(
     const response  = await axiosInstance.post(import.meta.env.VITE_API_LOGIN, credentials);
     const accessToken = response.headers['access']
     localStorage.setItem("accessToken", accessToken)
-    console.log('res', response)
     return response;
   } catch (error) {
     console.error("Login error", error);
@@ -50,6 +49,10 @@ export const logoutAPI = async () => {
     return undefined;
   }
 };
+
+export const isNotUserSession = async () => {
+
+}
 
 /**
  * 사용자 정보 조회 API

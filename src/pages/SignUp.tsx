@@ -3,6 +3,7 @@ import {InputField} from "../components/InputField";
 import {Button} from "../components/Button";
 import AuthHeader from "../components/AuthHeader";
 import {registerAPI} from "../api/user-service";
+import {useAuthorization} from "../hooks/useAuthorization";
 
 export default function SignUp() {
   // 입력상태 관리
@@ -11,6 +12,10 @@ export default function SignUp() {
     password: '',
     phone: ''
   });
+
+  // 토큰이 존재할경이 리다이렉트 처리
+  const {accessToken} = useAuthorization();
+  if (accessToken) window.location.href = '/'
 
   // 입력값 변경
   const handleChange = (e: {
