@@ -1,0 +1,35 @@
+@use '../variables';
+
+.searchbar-container .button-wrapper {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+
+  button, a {
+    margin: 0 1rem;
+    font-size: 32px;
+    color: variables.$white-color;
+    font-weight: 600;
+  }
+
+  button:hover {
+    color: variables.$primary-color;
+    transform: translateY(-20px);
+    transition: transform .2s ease-in-out;
+  }
+}
+
+.search-form {
+  width: 600px;
+  display: flex;
+  align-items: center;
+
+  .input-field {
+    width: 100%;
+  }
+
+  .button {
+    width: 100px;
+    border-radius: 0;
+  }
+}

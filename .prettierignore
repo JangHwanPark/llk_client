@@ -1,0 +1,12 @@
+node_modules/
+build/
+dist/
+
+.env
+.env.example
+
+.github
+.gitignore
+
+.babel.config.js
+.jest.config.js

@@ -1,0 +1,10 @@
+// 반응형 처리
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media screen and (max-width: 768px) { @content; }
+  } @else if $breakpoint == tablet {
+    @media screen and (max-width: 1024px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media screen and (min-width: 1024px) { @content; }
+  }
+}
