@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBar from '../components/SearchBar';
 import UserReview from '../components/UserReview';
 import Container from '../layout/Container';
 import ContactUsForm from "../components/ContactUsForm";
+import {useQuery} from "@tanstack/react-query";
+import {getReviewAPI} from "../api/review-service";
 // import Carousel from "../components/Carousel";
 
 export default function Home() {
+  const [review, setReview] = useState('');
+  const {data, isLoading, isError} = useQuery({
+    queryKey: ['review'],
+    queryFn: getReviewAPI
+  });
+  console.log(data)
+
   return (
     <Container>
       <section className='hero'>
