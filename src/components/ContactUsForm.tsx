@@ -2,8 +2,12 @@ import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {InputField} from "./InputField";
 import {Button} from "./Button";
 import {postSubmitContactUs} from "../api/user-service";
+import {useMutation} from "@tanstack/react-query";
+import LoadingSpinner from "./LoadingSpinner";
 
 const ContactUsForm: React.FC = () => {
+  const {mutation, isLoading, isError, error} = useMutation(postSubmitContactUs)
+
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -24,7 +28,15 @@ const ContactUsForm: React.FC = () => {
     e: FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-    await postSubmitContactUs(formData);
+    await mutation(formData);
+  }
+
+  if (isLoading) {
+    return <LoadingSpinner/>
+  }
+
+  if (isError) {
+    throw new Error("error" + error)
   }
 
   return (
