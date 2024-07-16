@@ -1,19 +1,17 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {RxHamburgerMenu} from "react-icons/rx";
 
 const navbarItems = [
   {label: "Buy", path: '/'},
   {label: "Sell", path: '/'},
   {label: "Rent", path: '/'},
-  // {label: "Land", path: '/'},
 ]
 
 export default function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
-    console.log(`toggleMenu : ${showMenu}`);
     setShowMenu(!showMenu);
   };
 
@@ -47,7 +45,7 @@ export default function Navigation() {
 
       {/* Auth Container */}
       <ul className={`auth-container ${showMenu ? "active-menu" : ""}`}>
-      <li><Link to="/signin">Login</Link></li>
+        <li><Link to="/signin">Login</Link></li>
         <li><Link to="/signup">Register</Link></li>
       </ul>
     </nav>
