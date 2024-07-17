@@ -1,4 +1,3 @@
-// Contact us Form
 .contact-form {
   width: 100%;
   padding: 30px 50px;
@@ -15,6 +14,10 @@
     h2 {
       text-align: center;
       font-weight: 600;
+    }
+
+    textarea.no-resize {
+      resize: none;
     }
   }
 

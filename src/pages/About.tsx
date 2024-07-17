@@ -37,7 +37,17 @@ const About: React.FC = () => {
                 <ReviewBox
                     customerName="Customer 3"
                     review="Not bad"
+                    rating={3}
+                />
+                <ReviewBox
+                    customerName="Customer 4"
+                    review="bad"
                     rating={2}
+                />
+                <ReviewBox
+                    customerName="Customer 5"
+                    review="so bad"
+                    rating={1}
                 />
               </div>
             </section>
