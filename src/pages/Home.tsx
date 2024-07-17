@@ -3,7 +3,7 @@ import SearchBar from '../components/SearchBar';
 import Container from '../layout/Container';
 import ContactUsForm from "../components/ContactUsForm";
 import Review from "../components/Review/Review";
-import HomeSection from "../layout/HomeSection";
+import SectionLayout from "../layout/HomeSection";
 
 const exploreData = [
   {path: './img/home01.jpeg'},
@@ -22,12 +22,12 @@ export default function Home() {
       <section className='hero'>
         <SearchBar />
       </section>
-      <HomeSection
+      <SectionLayout
         className='review-section'
         title='what our clients says'>
         <Review/>
-      </HomeSection>
-      <HomeSection
+      </SectionLayout>
+      <SectionLayout
         className='explore-section'
         title='Explore'>
         <div className='explore-container'>
@@ -37,12 +37,12 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </HomeSection>
-      <HomeSection
+      </SectionLayout>
+      <SectionLayout
         className='company-section'
         title='News'>
         <div>부동산 뉴스.</div>
-      </HomeSection>
+      </SectionLayout>
       <section>
         <ContactUsForm/>
       </section>

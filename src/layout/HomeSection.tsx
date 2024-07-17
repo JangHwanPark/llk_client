@@ -1,6 +1,12 @@
 import React from 'react';
 
-const HomeSection = ({title, className, children}) => {
+interface SectionLayoutProps {
+  title?: string;
+  className: string;
+  children: React.ReactNode
+}
+
+const SectionLayout = ({title, className, children}: SectionLayoutProps) => {
   return (
     <section className={className}>
       {title && <h2>{title}</h2>}
@@ -9,4 +15,4 @@ const HomeSection = ({title, className, children}) => {
   );
 };
 
-export default HomeSection;
+export default SectionLayout;
