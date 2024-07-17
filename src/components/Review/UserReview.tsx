@@ -8,7 +8,6 @@ const UserReview = ({item}) => {
     ? reviewDescription.slice(0, maxLength) + "..."
     : reviewDescription;
 
-
   const maxStarLength = 5;
   const filledStars = item.review_score;
   const emptyStars = maxStarLength - filledStars;
@@ -30,8 +29,7 @@ const UserReview = ({item}) => {
         <p>{item.user_name}</p>
       </div>
     </div>
-  )
-    ;
+  );
 };
 
 export default UserReview;
