@@ -1,12 +1,14 @@
 import React from 'react';
 import {Map, MapCameraChangedEvent} from '@vis.gl/react-google-maps';
 import Container from "../layout/Container";
+import SearchBar from "../components/SearchBar";
 
 const Buy = () => {
   return (
     <Container>
+      <SearchBar/>
       <Map
-        style={{width: '600px', height: '600px'}}
+        style={{width: '100%', height: '100%'}}
         defaultZoom={13}
         defaultCenter={ { lat: -33.860664, lng: 151.208138 } }
         onCameraChanged={ (ev: MapCameraChangedEvent) =>
