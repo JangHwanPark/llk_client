@@ -215,6 +215,9 @@ input:focus {
   text-align: center;
   font-weight: 600;
 }
+.contact-form .text-wrapper textarea.no-resize {
+  resize: none;
+}
 .contact-form .img-wrapper {
   width: 600px;
   height: 100%;
@@ -495,6 +498,7 @@ input:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 30rem;
 }
 .review-box .customer-info {
   flex: 1;

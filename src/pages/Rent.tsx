@@ -1,8 +1,8 @@
 import React from 'react';
-import Navigation from "../components/Navigation";
 import Container from "../layout/Container";
+import Navigation from "../components/Navigation";
 
-const Sell = () => {
+const Rent = () => {
   return (
     <Container>
       <Navigation/>
@@ -10,4 +10,4 @@ const Sell = () => {
   );
 };
 
-export default Sell;
+export default Rent;
