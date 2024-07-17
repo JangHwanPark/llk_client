@@ -1,72 +1,53 @@
 .navigation {
-  height: 100px;
-  padding: 1rem;
+  width: 100%;
+  // fixed 설정은 논의중
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
+  padding: 8px 12px;
+}
 
-  .nav-header {
-    width: 100%;
+.nav-menu {
+  display: flex;
 
-    .logo {
-      margin: auto 0;
-    }
-  }
-
-  .nav-menu {
-    display: flex;
-    align-items: center;
-
-    .nav-item {
-      margin: 0 1rem;
-    }
-  }
-
-  .auth-container {
-    display: flex;
-    align-items: center;
-
-    a {
-      margin: 0 1rem;
-    }
-  }
-
-  // 모바일 대응
-  .mobile-menu {
-    display: none;
+  .nav-item {
+    margin: 0;
+    padding: 8px 12px;
   }
 }
 
+.mobile-menu {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
-  .navigation {
-    height: 80px;
+  .nav-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navigation,
+  .nav-menu {
     flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .nav-header {
-      display: flex;
-      align-items: center;
-        justify-content: space-between;
-    }
+  .nav-menu {
+    width: 100%;
+    display: none;
+    align-items: center;
+  }
 
-    .nav-menu,
-    .auth-container {
-      display: none;
-    }
+  .mobile-menu {
+    display: block;
+    line-height: 2.5;
+  }
 
-    .active-menu {
-      width: 100%;
-      display: block;
-      text-align: center;
-      background: #fff;
-    }
-
-    .mobile-menu {
-      display: block;
-      line-height: 2.5;
-
-      button {
-        vertical-align: middle;
-      }
-    }
+  .active-menu {
+    display: flex;
   }
 }

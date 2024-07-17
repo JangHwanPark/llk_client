@@ -56,11 +56,11 @@ export default function Navigation() {
       </ul>
 
       {/* Auth Container */}
-      <ul className={`auth-container ${showMenu ? "active-menu" : ""}`}>
+      <ul className={`nav-menu ${showMenu ? "active-menu" : ""}`}>
         {!accessToken ? (
           <>
-            <li><Link to="/signin">Login</Link></li>
-            <li><Link to="/signup">Register</Link></li>
+            <li className="nav-item"><Link to="/signin">Login</Link></li>
+            <li className="nav-item"><Link to="/signup">Register</Link></li>
           </>
         ) : (
           <li><button onClick={handleClick}>LOGOUT</button></li>
