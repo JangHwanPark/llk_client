@@ -5,8 +5,12 @@
   justify-content: space-between;
   align-items: center;
 
-  .logo {
-    margin: auto 0;
+  .nav-header {
+    width: 100%;
+
+    .logo {
+      margin: auto 0;
+    }
   }
 
   .nav-menu {
@@ -50,12 +54,15 @@
     }
 
     .active-menu {
+      width: 100%;
       display: block;
       text-align: center;
+      background: #fff;
     }
 
     .mobile-menu {
       display: block;
+      line-height: 2.5;
 
       button {
         vertical-align: middle;

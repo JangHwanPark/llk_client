@@ -1,3 +1,5 @@
+@use './mixins';
+
 // Reset
 *,
 *::before,
@@ -22,6 +24,10 @@ body,
 
 #root {
   padding: 0 5rem;
+
+  @include mixins.respond-to(mobile) {
+    padding: 0;
+  }
 }
 
 // Typographic defaults
