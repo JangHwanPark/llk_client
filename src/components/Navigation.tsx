@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
 import {RxHamburgerMenu} from "react-icons/rx";
+import {useAuthorization} from "../hooks/useAuthorization";
+import {useMutation} from "@tanstack/react-query";
 
 const navbarItems = [
   {label: "Buy", path: '/'},
@@ -10,10 +12,20 @@ const navbarItems = [
 
 export default function Navigation() {
   const [showMenu, setShowMenu] = useState(false);
+  const {accessToken, logout} = useAuthorization();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  const mutation = useMutation({
+    mutationFn: async () => logout()
+  })
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log(e.target)
+    mutation.mutate()
+  }
 
   return (
     <nav className="navigation">
@@ -45,8 +57,14 @@ export default function Navigation() {
 
       {/* Auth Container */}
       <ul className={`auth-container ${showMenu ? "active-menu" : ""}`}>
-        <li><Link to="/signin">Login</Link></li>
-        <li><Link to="/signup">Register</Link></li>
+        {!accessToken ? (
+          <>
+            <li><Link to="/signin">Login</Link></li>
+            <li><Link to="/signup">Register</Link></li>
+          </>
+        ) : (
+          <li><button onClick={handleClick}>LOGOUT</button></li>
+        )}
       </ul>
     </nav>
   );

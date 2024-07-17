@@ -8,6 +8,8 @@
 @use './pages/SignIn';
 @use './pages/SignUp';
 @use './pages/ContactUs';
+@use './pages/About';
+
 
 // components
 @use './components/AuthHeader';
@@ -17,4 +19,5 @@
 @use './components/InputField';
 @use './components/SearchBar';
 @use './components/Review';
+@use './components/ReviewBox';
 @use './components/Carousel';

@@ -1,9 +1,20 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar';
-import UserReview from '../components/UserReview';
 import Container from '../layout/Container';
 import ContactUsForm from "../components/ContactUsForm";
-// import Carousel from "../components/Carousel";
+import Review from "../components/Review/Review";
+import HomeSection from "../layout/HomeSection";
+
+const exploreData = [
+  {path: './img/home01.jpeg'},
+  {path: './img/home02.jpeg'},
+  {path: './img/home03.jpeg'},
+  {path: './img/home04.jpeg'},
+  {path: './img/home05.jpeg'},
+  {path: './img/home06.jpeg'},
+  {path: './img/home07.jpeg'},
+  {path: './img/home08.jpeg'},
+]
 
 export default function Home() {
   return (
@@ -11,39 +22,27 @@ export default function Home() {
       <section className='hero'>
         <SearchBar />
       </section>
-      <section className='review-section'>
-        <h2>what our clients says</h2>
-        <div className='review-wrapper'>
-          <UserReview/>
-          <UserReview/>
-          <UserReview/>
-          <UserReview/>
-          <UserReview/>
-        </div>
-      </section>
-      {/*<section className='carousel-section'>
-        <Carousel/>
-      </section>*/}
-      <section className='company-section'>
-        <h2>Company About</h2>
-        <div className='company-container'>
-          {/*<div><img src="./img/hero01.jpg" alt=""/></div>*/}
-          <div>회사 소개 섹션 입니다.</div>
-        </div>
-      </section>
-      <section className='explore-section'>
-        <h2>Explore</h2>
+      <HomeSection
+        className='review-section'
+        title='what our clients says'>
+        <Review/>
+      </HomeSection>
+      <HomeSection
+        className='explore-section'
+        title='Explore'>
         <div className='explore-container'>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
-          <div className='explore-item'>Item</div>
+          {exploreData.map((item, index) => (
+            <div key={index} className="explore-item">
+              <img src={item.path} alt=""/>
+            </div>
+          ))}
         </div>
-      </section>
+      </HomeSection>
+      <HomeSection
+        className='company-section'
+        title='News'>
+        <div>부동산 뉴스.</div>
+      </HomeSection>
       <section>
         <ContactUsForm/>
       </section>

@@ -10,13 +10,10 @@ export const registerAPI = async (
     phone: string;
   }) => {
   try {
-    // 회원가입 API 호출
-    const res = await axiosInstance.post(import.meta.env.VITE_API_REGISTER, user);
-    console.log('res', res)
-    return res;
+    return await axiosInstance.post(import.meta.env.VITE_API_REGISTER, user);
   } catch (error) {
     console.error("Register error", error);
-    return undefined;   // 오류 발생 시 undefined 반환
+    return undefined;
   }
 }
 
@@ -29,15 +26,10 @@ export const loginAPI = async(
     password: string;
   }) => {
   try {
-    // 로그인 API 호출
-    const response  = await axiosInstance.post(import.meta.env.VITE_API_LOGIN, credentials);
-    const accessToken = response.headers['Access']
-    console.log('accessToken', accessToken)
-    console.log('res', response)
-    return response;
+    return await axiosInstance.post(import.meta.env.VITE_API_LOGIN, credentials);
   } catch (error) {
     console.error("Login error", error);
-    return undefined;   // 오류 발생 시 undefined 반환
+    return undefined;
   }
 }
 
@@ -46,11 +38,10 @@ export const loginAPI = async(
  */
 export const logoutAPI = async () => {
   try {
-    // 로그아웃 API 호출
     return await axiosInstance.post(import.meta.env.VITE_API_OUT);
   } catch (error) {
     console.error("Logout error", error);
-    return undefined;   // 오류 발생 시 undefined 반환
+    return undefined;
   }
 };
 

@@ -1,7 +1,9 @@
 // 컨텍스트 API 타입 정의
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import axios from 'axios';
-import { getUserInfoAPI, loginAPI, logoutAPI } from '../api/user-service';
+import { loginAPI, logoutAPI } from '../api/user-service';
+import {redirect} from "react-router-dom";
+import {SignInProps} from "../pages/SignIn";
 
 
 /*interface JwtPayload {
@@ -36,7 +38,6 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
   // const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
   const [accessToken, setAccessToken] = useState<string | null>(localStorage.getItem("accessToken"));
 
-
   useEffect(() => {
     if (accessToken) {
       localStorage.setItem("accessToken", accessToken)
@@ -48,19 +49,12 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
   }, [accessToken]);
 
 
-  const login = async (credential: {
-    email: string,
-    password: string,
-  }) => {
+  const login = async (credential: SignInProps) => {
     const response = await loginAPI(credential);
-
     if (response && response.status === 200) {
-      const accessToken = response.headers["Access"];
+      const accessToken = response.headers["access"];
       setAccessToken(accessToken);
-
-      // logging
-      console.log("Access Token: ", accessToken);
-      await getUserInfoAPI();
+      redirect('/')
     } else {
       console.error("Login failed with status " + response?.status);
     }
@@ -70,10 +64,10 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
   const logout = async () => {
     try {
       const response = await logoutAPI();
-
-      if (response && response.status == 200) {
-        setAccessToken(null)
+      console.log(response)
+      if (response.status == 200) {
         localStorage.removeItem("accessToken");
+        setAccessToken(null)
       } else {
         console.error("Logout failed with status: " + response?.status);
       }
@@ -100,6 +94,9 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
         const newAccessToken = response.data.accessToken;
         setAccessToken(newAccessToken);
         localStorage.setItem("accessToken", newAccessToken);
+      } else {
+        console.error("Failed to reissue token: status " + response.status);
+        await logout();
       }
     }
   };

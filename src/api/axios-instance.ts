@@ -11,4 +11,5 @@ export const axiosInstance = axios.create({
   headers: {
     'Content-Type': import.meta.env.VITE_API_HEADERS,
   },
+  withCredentials: true
 });

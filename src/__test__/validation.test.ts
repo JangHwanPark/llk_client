@@ -6,7 +6,7 @@ import {
   validateURL,
   validateUsername,
   validateAddress,
-} from '../service/validation';
+} from '../utils/validation';
 
 describe('Validation Tests', () => {
   describe('validateEmail', () => {

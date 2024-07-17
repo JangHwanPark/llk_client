@@ -5,10 +5,20 @@ import {postSubmitContactUs} from "../api/user-service";
 import {useMutation} from "@tanstack/react-query";
 import LoadingSpinner from "./LoadingSpinner";
 
-const ContactUsForm: React.FC = () => {
-  const {mutation, isLoading, isError, error} = useMutation(postSubmitContactUs)
+interface formDataType {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  description: string;
+}
 
-  const [formData, setFormData] = useState({
+const ContactUsForm: React.FC = () => {
+  const mutation = useMutation({
+    mutationFn: postSubmitContactUs
+  })
+
+  const [formData, setFormData] = useState<formDataType>({
     firstName: '',
     lastName: '',
     email: '',
@@ -24,65 +34,62 @@ const ContactUsForm: React.FC = () => {
     })
   }
 
-  const handleSubmit = async (
+  const handleSubmit = (
     e: FormEvent<HTMLFormElement>
   ) => {
     e.preventDefault();
-    await mutation(formData);
-  }
-
-  if (isLoading) {
-    return <LoadingSpinner/>
-  }
-
-  if (isError) {
-    throw new Error("error" + error)
+    mutation.mutate(formData);
   }
 
   return (
     <form className='contact-form' onSubmit={handleSubmit}>
-      <div className='text-wrapper'>
-        <h2>Get In Touch</h2>
-        <InputField
-          placeholder='first name'
-          type='text'
-          name='firstName'
-          value={formData.firstName}
-          onChange={handleChange}
-        />
-        <InputField
-          placeholder='last name'
-          type='text'
-          name='lastName'
-          value={formData.lastName}
-          onChange={handleChange}
-        />
-        <InputField
-          placeholder='email'
-          type='text'
-          name='email'
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <InputField
-          placeholder='phone'
-          type='text'
-          name='phone'
-          value={formData.phone}
-          onChange={handleChange}
-        />
-        <textarea
-          id="contact-description"
-          name="description"
-          placeholder='description'
-          onChange={handleChange}
-          defaultValue="I really enjoyed biking yesterday!"
-        />
-        <Button text='Submit' type='submit'/>
-      </div>
-      <div className='img-wrapper'>
-        <img src="./img/hero02.jpg" alt=""/>
-      </div>
+      {mutation.isPending ? (
+        <LoadingSpinner/>
+      ) : (
+        <>
+          <div className='text-wrapper'>
+            <h2>Get In Touch</h2>
+            <InputField
+              placeholder='first name'
+              type='text'
+              name='firstName'
+              value={formData.firstName}
+              onChange={handleChange}
+            />
+            <InputField
+              placeholder='last name'
+              type='text'
+              name='lastName'
+              value={formData.lastName}
+              onChange={handleChange}
+            />
+            <InputField
+              placeholder='email'
+              type='text'
+              name='email'
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <InputField
+              placeholder='phone'
+              type='text'
+              name='phone'
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <textarea
+              id="contact-description"
+              name="description"
+              placeholder='description'
+              onChange={handleChange}
+              defaultValue="I really enjoyed biking yesterday!"
+              className='no-resize'
+            />
+            <Button text='Submit' type='submit'/>
+          </div>
+
+        </>
+      )}
     </form>
   );
 };
