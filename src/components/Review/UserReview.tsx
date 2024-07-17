@@ -11,7 +11,8 @@ const UserReview = ({ item }) => {
         <p>{item.user_name}</p>
       </div>
     </div>
-  );
+)
+  ;
 };
 
 export default UserReview;

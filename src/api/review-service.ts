@@ -1,7 +1,12 @@
 import {axiosInstance} from "./axios-instance";
 
 export const getReviewAPI = async () => {
-  const response = await axiosInstance.get(import.meta.env.VITE_API_REVIEW);
-  console.log(response)
-  return response;
+  try {
+    return await axiosInstance.get(
+      import.meta.env.VITE_API_REVIEW, {
+        timeout: 5000,
+      });
+  } catch (error) {
+    throw new Error("getReviewAPI Error: " + error)
+  }
 }

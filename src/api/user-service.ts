@@ -10,9 +10,7 @@ export const registerAPI = async (
     phone: string;
   }) => {
   try {
-    const response = await axiosInstance.post(import.meta.env.VITE_API_REGISTER, user);
-    console.log('res', response)
-    return response;
+    return await axiosInstance.post(import.meta.env.VITE_API_REGISTER, user);
   } catch (error) {
     console.error("Register error", error);
     return undefined;
@@ -28,10 +26,7 @@ export const loginAPI = async(
     password: string;
   }) => {
   try {
-    const response  = await axiosInstance.post(import.meta.env.VITE_API_LOGIN, credentials);
-    const accessToken = response.headers['access']
-    localStorage.setItem("accessToken", accessToken)
-    return response;
+    return await axiosInstance.post(import.meta.env.VITE_API_LOGIN, credentials);
   } catch (error) {
     console.error("Login error", error);
     return undefined;
@@ -49,10 +44,6 @@ export const logoutAPI = async () => {
     return undefined;
   }
 };
-
-export const isNotUserSession = async () => {
-
-}
 
 /**
  * 사용자 정보 조회 API
