@@ -1,12 +1,20 @@
 .about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+
   .self-introduction {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
 
     .img-wrapper {
-      margin-left: -14rem;
+      margin-right: 2rem;
 
       .profile-photo {
         width: 300px;
@@ -17,10 +25,8 @@
     }
 
     .text-wrapper {
-      margin-left: 4rem;
-
       h2 {
-        font-size: 1rem;
+        font-size: 2rem;
         margin-bottom: 0.5rem;
       }
 
@@ -33,27 +39,18 @@
   .container {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
-    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
 
     .about-contact,
     .about-review {
       flex: 1;
-    }
-
-    .about-content,
-    .about-review .review {
-      h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
-      }
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .about-contact {
-      max-width: 500px;
-      margin: 0 auto;
-
       .contact-form {
         width: 100%;
         padding: 0 20px;
@@ -81,12 +78,25 @@
         textarea {
           width: 100%;
           max-width: 100%;
+          padding: 10px;
+          margin-bottom: 10px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
         }
       }
     }
 
     .about-review {
       .review {
+        padding: 20px;
+
+
+        h2 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+          line-height: 1.2;
+        }
+
         h3 {
           font-size: 1rem;
           margin-bottom: 1rem;

@@ -1,13 +1,13 @@
 import React from 'react';
 import Container from '../layout/Container';
-import AboutContactUsForm from '../components/AboutContactUs';
+import ContactUsForm from '../components/ContactUsForm';
 import ReviewBox from '../components/ReviewBox';
 
 const About: React.FC = () => {
   return (
       <Container>
-        <section className="about-page">
-          <header className="self-introduction">
+        <div className="about-page">
+          <div className="self-introduction">
             <div className="img-wrapper">
               <img src="/img/geon.jpg" className="profile-photo" alt="Wonjin Han" />
             </div>
@@ -15,10 +15,10 @@ const About: React.FC = () => {
               <h2>Wonjin Han</h2>
               <p>Have a question for our agent?</p>
             </div>
-          </header>
-          <section  className="container">
+          </div>
+          <main className="container">
             <section className="about-contact">
-              <AboutContactUsForm />
+              <ContactUsForm />
             </section>
             <section className="about-review">
               <div className="review">
@@ -41,8 +41,8 @@ const About: React.FC = () => {
                 />
               </div>
             </section>
-          </section>
-        </section>
+          </main>
+        </div>
       </Container>
   );
 };
