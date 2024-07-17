@@ -225,6 +225,97 @@ input:focus {
     display: none;
   }
 }
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.about-page .self-introduction {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 2rem;
+  margin-right: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  max-width: 1200px;
+}
+.about-page .self-introduction .img-wrapper {
+  margin-right: 2rem;
+}
+.about-page .self-introduction .img-wrapper .profile-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 5%;
+  object-fit: cover;
+}
+.about-page .self-introduction .text-wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.about-page .self-introduction .text-wrapper p {
+  font-size: 1.2rem;
+}
+.about-page .container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+.about-page .container .about-contact,
+.about-page .container .about-review {
+  flex: 1;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.about-page .container .about-contact .contact-form {
+  width: 100%;
+  padding: 0 20px;
+}
+.about-page .container .about-contact .contact-form .text-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+.about-page .container .about-contact .contact-form .text-wrapper h2 {
+  margin-bottom: 1rem;
+}
+.about-page .container .about-contact .contact-form .text-wrapper h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.about-page .container .about-contact .contact-form .text-wrapper p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.about-page .container .about-contact .contact-form input[type=text],
+.about-page .container .about-contact .contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.about-page .container .about-review .review {
+  padding: 20px;
+}
+.about-page .container .about-review .review h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+.about-page .container .about-review .review h3 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.about-page .container .about-review .review p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .header-auth .header-title,
 .header-auth .header-contents {
   text-align: center;
@@ -394,6 +485,32 @@ input:focus {
   width: 80px;
   height: 80px;
   margin: 0 auto;
+}
+
+.review-box {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.review-box .customer-info {
+  flex: 1;
+}
+.review-box .customer-info .customer-name {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.review-box .customer-info .review-text {
+  margin: 0;
+  font-size: 14px;
+}
+.review-box .rating {
+  color: #ffc107;
+  font-size: 18px;
 }
 
 .carousel-container {

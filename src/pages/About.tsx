@@ -9,7 +9,7 @@ const About: React.FC = () => {
         <div className="about-page">
           <div className="self-introduction">
             <div className="img-wrapper">
-              <img src="/img/geon.jpg" className="profile-photo" alt="Wonjin Han" />
+              <img src="./user.png" className="profile-photo" alt="Wonjin Han" />
             </div>
             <div className="text-wrapper">
               <h2>Wonjin Han</h2>
