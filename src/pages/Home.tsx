@@ -19,7 +19,7 @@ export default function Home() {
       <HomeSection
         className='company-section'
         title='Company About'>
-        <div>회사 소개 섹션 입니다.</div>
+        <div>회사 소개를 작성해 주세요.</div>
       </HomeSection>
       <HomeSection
         className='explore-section'
