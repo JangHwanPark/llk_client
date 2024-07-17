@@ -86,9 +86,7 @@ const ContactUsForm: React.FC = () => {
             />
             <Button text='Submit' type='submit'/>
           </div>
-          <div className='img-wrapper'>
-            <img src="./img/hero02.jpg" alt=""/>
-          </div>
+
         </>
       )}
     </form>
