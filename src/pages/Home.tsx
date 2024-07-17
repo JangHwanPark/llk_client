@@ -26,7 +26,7 @@ export default function Home() {
         title='Explore'>
         <div className='explore-container'>
           {Array.from([1, 2, 3, 4, 5, 6, 7, 8]).map(item => (
-            <div className="explore-item">Item + {item}</div>
+            <div key={item} className="explore-item">Item + {item}</div>
           ))}
         </div>
       </HomeSection>
