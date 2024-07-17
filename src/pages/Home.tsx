@@ -28,11 +28,6 @@ export default function Home() {
         <Review/>
       </HomeSection>
       <HomeSection
-        className='company-section'
-        title='Company About'>
-        <div>회사 소개를 작성해 주세요.</div>
-      </HomeSection>
-      <HomeSection
         className='explore-section'
         title='Explore'>
         <div className='explore-container'>
@@ -42,6 +37,11 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </HomeSection>
+      <HomeSection
+        className='company-section'
+        title='News'>
+        <div>부동산 뉴스.</div>
       </HomeSection>
       <section>
         <ContactUsForm/>
