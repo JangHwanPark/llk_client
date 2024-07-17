@@ -79,11 +79,10 @@ const ContactUsForm: React.FC = () => {
             />
             <textarea
               id="contact-description"
+              className='no-resize'
               name="description"
               placeholder='description'
               onChange={handleChange}
-              defaultValue="I really enjoyed biking yesterday!"
-              className='no-resize'
             />
             <Button text='Submit' type='submit'/>
           </div>
