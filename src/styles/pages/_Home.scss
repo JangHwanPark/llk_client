@@ -74,12 +74,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  // 리뷰 (모바일)
   .review-section .review-wrapper {
     margin: 0 auto;
     flex-direction: column;
   }
 
-  // 매물 탐색
+  // 매물 탐색 (모바일)
   .explore-container {
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(2, 1fr);
