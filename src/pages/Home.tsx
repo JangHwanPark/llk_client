@@ -5,6 +5,17 @@ import ContactUsForm from "../components/ContactUsForm";
 import Review from "../components/Review/Review";
 import HomeSection from "../layout/HomeSection";
 
+const exploreData = [
+  {path: './img/home01.jpeg'},
+  {path: './img/home02.jpeg'},
+  {path: './img/home03.jpeg'},
+  {path: './img/home04.jpeg'},
+  {path: './img/home05.jpeg'},
+  {path: './img/home06.jpeg'},
+  {path: './img/home07.jpeg'},
+  {path: './img/home08.jpeg'},
+]
+
 export default function Home() {
   return (
     <Container>
@@ -25,8 +36,10 @@ export default function Home() {
         className='explore-section'
         title='Explore'>
         <div className='explore-container'>
-          {Array.from([1, 2, 3, 4, 5, 6, 7, 8]).map(item => (
-            <div key={item} className="explore-item">Item + {item}</div>
+          {exploreData.map((item, index) => (
+            <div key={index} className="explore-item">
+              <img src={item.path} alt=""/>
+            </div>
           ))}
         </div>
       </HomeSection>

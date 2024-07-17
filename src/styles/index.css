@@ -112,7 +112,7 @@ input:focus {
 
 .company-section,
 .explore-section {
-  margin: 3rem 5rem;
+  margin: 3rem 0;
 }
 .company-section h2,
 .explore-section h2 {
