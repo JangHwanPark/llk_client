@@ -6,7 +6,18 @@ import SearchBar from "../components/SearchBar";
 const Buy = () => {
   return (
     <Container>
-      <SearchBar/>
+      <main className='buy'>
+        <SearchBar/>
+        <Map
+          style={{width: '100%', height: '100%'}}
+          defaultZoom={13}
+          defaultCenter={ { lat: -33.860664, lng: 151.208138 } }
+          onCameraChanged={ (ev: MapCameraChangedEvent) =>
+            console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
+          }>
+        </Map>
+      </main>
+      {/*<SearchBar/>
       <Map
         style={{width: '100%', height: '100%'}}
         defaultZoom={13}
@@ -14,7 +25,7 @@ const Buy = () => {
         onCameraChanged={ (ev: MapCameraChangedEvent) =>
           console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
         }>
-      </Map>
+      </Map>*/}
     </Container>
   );
 };

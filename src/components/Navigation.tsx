@@ -63,7 +63,7 @@ export default function Navigation() {
             <li className="nav-item"><Link to="/signup">Register</Link></li>
           </>
         ) : (
-          <li><button onClick={handleClick}>LOGOUT</button></li>
+          <li className="nav-item"><button onClick={handleClick}>LOGOUT</button></li>
         )}
       </ul>
     </nav>

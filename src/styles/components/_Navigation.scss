@@ -1,11 +1,12 @@
 .navigation {
-  width: 100%;
+  // width: 100%;
   // fixed 설정은 논의중
+  width: 88%;
   position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
+  background: #f9f9f9;
   padding: 8px 12px;
 }
 
@@ -23,6 +24,10 @@
 }
 
 @media screen and (max-width: 768px) {
+  .navigation {
+    width: 100%;
+  }
+
   .nav-header {
     width: 100%;
     display: flex;
