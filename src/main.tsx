@@ -15,6 +15,8 @@ import './styles/index.scss';
 import {AuthProvider} from './context/AuthContext';
 import About from './pages/About';
 import {APIProvider} from "@vis.gl/react-google-maps";
+import Sell from "./pages/Sell";
+import Rent from "./pages/Rent";
 
 // 라우터 설정
 const routes = [
@@ -27,6 +29,8 @@ const routes = [
       {path: 'signup', element: <SignUp/>},
       {path: 'about', element: <About/>},
       {path: 'buy', element: <Buy/>},
+      {path: 'sell', element: <Sell/>},
+      {path: 'rent', element: <Rent/>},
     ],
   },
 ];

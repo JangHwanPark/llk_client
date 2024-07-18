@@ -5,9 +5,10 @@ import {useAuthorization} from "../hooks/useAuthorization";
 import {useMutation} from "@tanstack/react-query";
 
 const navbarItems = [
-  {label: "Buy", path: '/'},
-  {label: "Sell", path: '/'},
-  {label: "Rent", path: '/'},
+  {label: "Buy", path: '/buy'},
+  {label: "Sell", path: '/sell'},
+  {label: "Rent", path: '/rent'},
+  {label: "About", path: '/about'},
 ]
 
 export default function Navigation() {
@@ -22,10 +23,7 @@ export default function Navigation() {
     mutationFn: async () => logout()
   })
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e.target)
-    mutation.mutate()
-  }
+  const handleClick = () => mutation.mutate()
 
   return (
     <nav className="navigation">
@@ -44,15 +42,10 @@ export default function Navigation() {
 
       <ul className={`nav-menu ${showMenu ? 'active-menu' : ''}`}>
         {navbarItems.map((item, idx) => (
-          <li key={idx} className="nav-item" onClick={() => {
-            alert("준비중 입니다.")
-          }}>
+          <li key={idx} className="nav-item">
             <Link to={item.path}>{item.label}</Link>
           </li>
         ))}
-        <li className="nav-item">
-          <Link to='/about'>About</Link>
-        </li>
       </ul>
 
       {/* Auth Container */}

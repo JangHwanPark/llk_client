@@ -10,22 +10,16 @@ const Buy = () => {
         <SearchBar/>
         <Map
           style={{width: '100%', height: '100%'}}
-          defaultZoom={13}
-          defaultCenter={ { lat: -33.860664, lng: 151.208138 } }
+          defaultZoom={12}
+          defaultCenter={ {
+            lat: 32.09773731821971,
+            lng: -81.07777755982066
+        } }
           onCameraChanged={ (ev: MapCameraChangedEvent) =>
             console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
           }>
         </Map>
       </main>
-      {/*<SearchBar/>
-      <Map
-        style={{width: '100%', height: '100%'}}
-        defaultZoom={13}
-        defaultCenter={ { lat: -33.860664, lng: 151.208138 } }
-        onCameraChanged={ (ev: MapCameraChangedEvent) =>
-          console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
-        }>
-      </Map>*/}
     </Container>
   );
 };
