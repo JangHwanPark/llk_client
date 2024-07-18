@@ -7,7 +7,6 @@
 @use './pages/Home';
 @use './pages/SignIn';
 @use './pages/SignUp';
-@use './pages/ContactUs';
 @use './pages/About';
 
 
@@ -21,3 +20,4 @@
 @use './components/Review';
 @use './components/ReviewBox';
 @use './components/Carousel';
+@use './components/ContactUs';

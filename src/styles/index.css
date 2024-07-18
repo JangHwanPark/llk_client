@@ -4,7 +4,6 @@
 @use './pages/Home';
 @use './pages/SignIn';
 @use './pages/SignUp';
-@use './pages/ContactUs';
 @use './pages/About';
 @use './components/AuthHeader';
 @use './components/Button';
@@ -15,5 +14,6 @@
 @use './components/Review';
 @use './components/ReviewBox';
 @use './components/Carousel';
+@use './components/ContactUs';
 
 /*# sourceMappingURL=index.css.map */

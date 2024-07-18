@@ -1,4 +1,4 @@
-.about-page {
+.about {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
@@ -31,66 +31,49 @@
   .about-contact {
     width: 100%;
     padding: 20px;
-    box-sizing: border-box;
+
+
   }
 
-  .about-contact {
-    .contact-form {
-      width: 100%;
-      padding: 0 20px;
+  .about-review .review {
+    padding: 20px;
 
-      .text-wrapper {
-        max-width: 400px;
-        margin: 0 auto;
 
-        h2 {
-          margin-bottom: 1rem;
-        }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.2;
+    }
 
-        h3 {
-          width: 100%;
-          font-size: 1rem;
-          margin-bottom: 1rem;
-        }
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
 
-        p {
-          font-size: 1rem;
-          margin-bottom: 0.5rem;
-        }
-      }
-
-      input[type="text"],
-      textarea {
-        width: 100%;
-        max-width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-      }
+    p {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
   }
+}
 
-  .about-review {
-    .review {
-      padding: 20px;
+@media screen and (max-width: 768px) {
+  .about {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5rem;
 
+    &-review {
+      margin: 0 auto;
+    }
 
-      h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
-      }
+    .img-wrapper {
+      margin-top: 5rem;
+      display: block;
+    }
 
-      h3 {
-        font-size: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      p {
-        font-size: 1rem;
-        margin-bottom: 0.5rem;
-      }
+    .text-wrapper {
+      margin: 0 3rem;
     }
   }
 }

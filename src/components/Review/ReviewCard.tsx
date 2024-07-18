@@ -7,7 +7,7 @@ interface ReviewBoxProps {
     rating: number;
 }
 
-const ReviewBox: React.FC<ReviewBoxProps> = ({ customerName, review, rating }) => {
+const ReviewCard: React.FC<ReviewBoxProps> = ({ customerName, review, rating }) => {
     const renderStars = (rating: number) => {
         return '★'.repeat(rating) + '☆'.repeat(5 - rating);
     };
@@ -23,4 +23,4 @@ const ReviewBox: React.FC<ReviewBoxProps> = ({ customerName, review, rating }) =
     );
 };
 
-export default ReviewBox;
+export default ReviewCard;

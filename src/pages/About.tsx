@@ -1,13 +1,21 @@
 import React from 'react';
 import Container from '../layout/Container';
 import ContactUsForm from '../components/ContactUsForm';
-import ReviewBox from '../components/ReviewBox';
 import SectionLayout from '../layout/HomeSection';
+import ReviewCard from '../components/Review/ReviewCard';
+
+const aboutReview = [
+  {customer: 'Customer 1', title: 'Customer Reviews', rating: 5},
+  {customer: 'Customer 2', title: 'Customer Reviews', rating: 5},
+  {customer: 'Customer 3', title: 'Customer Reviews', rating: 5},
+  {customer: 'Customer 4', title: 'Customer Reviews', rating: 5},
+  {customer: 'Customer 5', title: 'Customer Reviews', rating: 5},
+];
 
 const About: React.FC = () => {
   return (
       <Container>
-        <main className="about-page">
+        <main className="about">
           <SectionLayout className="img-wrapper">
             <img src="./agent.jpg" className="profile-photo" alt="Wonjin Han" />
           </SectionLayout>
@@ -27,31 +35,13 @@ const About: React.FC = () => {
             className="about-review"
             title="Customer Reviews">
             <h3>See what our customers have to say</h3>
-            <ReviewBox
-              customerName="Customer 1"
-              review="It's so good and fantastic"
-              rating={5}
-            />
-            <ReviewBox
-              customerName="Customer 2"
-              review="It's so good"
-              rating={4}
-            />
-            <ReviewBox
-              customerName="Customer 3"
-              review="Not bad"
-              rating={3}
-            />
-            <ReviewBox
-              customerName="Customer 4"
-              review="bad"
-              rating={2}
-            />
-            <ReviewBox
-              customerName="Customer 5"
-              review="so bad"
-              rating={1}
-            />
+            {aboutReview.map(item => (
+              <ReviewCard
+                customerName={item.customer}
+                review={item.title}
+                rating={item.rating}
+              />
+            ))}
           </SectionLayout>
           <section className="about-contact">
             <ContactUsForm />
