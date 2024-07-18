@@ -82,3 +82,21 @@ export const postSubmitContactUs = async (
   const response = await axiosInstance.post(import.meta.env.VITE_API_CONTACT, contact);
   console.log(response)
 }
+
+/**
+ *  sell form (판매문의하기)
+ **/
+
+export const postSubmitSell = async (
+    contact: {
+        firstName: string;
+        lastName: string;
+        phone: string;
+        StreetAdress: string;
+        AdditionalInformation: string;
+    }
+) => {
+    const response = await axiosInstance.post(import.meta.env.VITE_API_CONTACT, contact);
+    console.log(response)
+}
+
