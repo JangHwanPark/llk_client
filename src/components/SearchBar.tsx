@@ -1,6 +1,6 @@
-import React, {FormEvent, useState} from 'react';
-import {InputField} from "./InputField";
-import {Button} from "./Button";
+import React, { FormEvent, useState } from 'react';
+import { InputField } from "./InputField";
+import { Button } from "./Button";
 
 const buttonData = [
   {label: 'Buy'},
@@ -8,7 +8,7 @@ const buttonData = [
   // {label: 'Sell'},
 ]
 
-const SearchBar = () => {
+const SearchBar = ({ showButtons = true }) => {
   const [clickButton, setClickButton] = useState('');
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -23,19 +23,21 @@ const SearchBar = () => {
   }
 
   return (
-    <div className='searchbar-container'>
-      <div className='button-wrapper'>
-        {buttonData.map(item => (
-          <button key={item.label} onClick={handleClick}>
-            {item.label}
-          </button>
-        ))}
+      <div className='searchbar-container'>
+        {showButtons && (
+            <div className='button-wrapper'>
+              {buttonData.map(item => (
+                  <button key={item.label} onClick={handleClick}>
+                    {item.label}
+                  </button>
+              ))}
+            </div>
+        )}
+        <form className='search-form' onSubmit={handleSubmit}>
+          <InputField placeholder='검색' type='text'/>
+          <Button text='Submit' type='submit'/>
+        </form>
       </div>
-      <form className='search-form' onSubmit={handleSubmit}>
-        <InputField placeholder='검색' type='text'/>
-        <Button text='Submit' type='submit'/>
-      </form>
-    </div>
   );
 };
 
