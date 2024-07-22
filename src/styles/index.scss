@@ -9,7 +9,7 @@
 @use './pages/SignUp';
 @use './pages/About';
 @use './pages/Buy';
-
+@use './pages/Sell';
 
 // components
 @use './components/AuthHeader';
@@ -22,3 +22,4 @@
 @use './components/ReviewBox';
 @use './components/Carousel';
 @use './components/ContactUs';
+
