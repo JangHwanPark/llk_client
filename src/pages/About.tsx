@@ -3,6 +3,7 @@ import Container from '../layout/Container';
 import ContactUsForm from '../components/ContactUsForm';
 import SectionLayout from '../layout/HomeSection';
 import ReviewCard from '../components/Review/ReviewCard';
+import Info from '../components/Info';
 
 const aboutReview = [
   {customer: 'Customer 1', title: 'Customer Reviews', rating: 5},
@@ -30,6 +31,10 @@ const About: React.FC = () => {
               Office Location: 5547 Veterans Pkwy, Columbus<br />
               Office Phone Number: 706-653-1400
             </p>
+
+          </SectionLayout>
+          <SectionLayout className= "about-info">
+          <Info/>
           </SectionLayout>
           <SectionLayout
             className="about-review"
