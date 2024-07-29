@@ -16,6 +16,14 @@
       object-fit: cover;
     }
   }
+  .about-info {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+  }
+
 
   .text-wrapper {
     h2 {
